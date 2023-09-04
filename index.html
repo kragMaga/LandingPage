@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RESPONSIVE LANDING PAGE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">ADEKOLA</a>
+        <div class="menubtn"></div>
+        <div class="navigation">
+            <div class="navitems">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="videoslide active" src="V1.mp4" autoplay muted loop></video>
+        <video class="videoslide" src="V2.mp4" autoplay muted loop></video>
+        <video class="videoslide" src="V3.mp4" autoplay muted loop></video>
+        <video class="videoslide" src="V4.mp4" autoplay muted loop></video>
+        <video class="videoslide" src="V5.mp4" autoplay muted loop></video>
+
+
+        <div class="content active">
+            <h1>Hiking. <br><span>mountain</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                 Exercitationem corporis enim adipisci magnam eos accusamus totam incidunt? <br>
+                  Libero veniam aspernatur cupiditate expedita culpa beatae necessitatibus eum, <br>
+                   doloremque numquam eligendi repudiandae.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>boat. <br><span>cruise</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                 Exercitationem corporis enim adipisci magnam eos accusamus totam incidunt? <br>
+                  Libero veniam aspernatur cupiditate expedita culpa beatae necessitatibus eum, <br>
+                   doloremque numquam eligendi repudiandae.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>Adventure. <br><span>camp</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                 Exercitationem corporis enim adipisci magnam eos accusamus totam incidunt? <br>
+                  Libero veniam aspernatur cupiditate expedita culpa beatae necessitatibus eum, <br>
+                   doloremque numquam eligendi repudiandae.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>snow. <br><span>skiing</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                 Exercitationem corporis enim adipisci magnam eos accusamus totam incidunt? <br>
+                  Libero veniam aspernatur cupiditate expedita culpa beatae necessitatibus eum, <br>
+                   doloremque numquam eligendi repudiandae.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="content">
+            <h1>peaceful. <br><span>moment</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                 Exercitationem corporis enim adipisci magnam eos accusamus totam incidunt? <br>
+                  Libero veniam aspernatur cupiditate expedita culpa beatae necessitatibus eum, <br>
+                   doloremque numquam eligendi repudiandae.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="mediaicons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="slidernav">
+            <div class="navbtn active"></div>
+            <div class="navbtn"></div>
+            <div class="navbtn"></div>
+            <div class="navbtn"></div>
+            <div class="navbtn"></div>
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        //javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menubtn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", ()=> {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+
+        //javascript for video slider navigation
+        const btns = document.querySelectorAll(".navbtn");
+        const slides = document.querySelectorAll(".videoslide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active")
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
